@@ -10,5 +10,5 @@ services:
     networks:
       - ro-db-network
 networks:
-  ro-postgress-network:
+  ro-db-network:
     name: ro-db-network
