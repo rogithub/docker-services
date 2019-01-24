@@ -15,4 +15,7 @@ $ sudo docker stop postgres
 $ sudo docker exec postgres pg_dump -U postgres cc > ccbackup
 
 ## RESTORE COMMAND
-cat ccbackup | sudo docker exec -i postgres psql -U postgres cc
+$ cat ccbackup | sudo docker exec -i postgres psql -U postgres cc
+
+## ssh conection
+$ ssh -L [PUERTO LOCAL]:localhost:[PUERTO REMOTO] [SERVIDOR REMOTO]
