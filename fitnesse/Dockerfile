@@ -7,5 +7,8 @@ RUN mkdir -p /opt/fitnesse
 RUN wget -O "/opt/fitnesse/fitnesse-standalone.jar" "http://www.fitnesse.org/fitnesse-standalone.jar?responder=releaseDownload&release=$FNREL" && \
     chown fitnesse.fitnesse /opt/fitnesse
 ADD start.sh /start.sh
+ADD hellotest/fit.dll /opt/fitnesse/hellotest/fit.dll
+ADD hellotest/RoFitNesseLibrary.dll /opt/fitnesse/hellotest/RoFitNesseLibrary.dll
+ADD hellotest/Runner.exe /opt/fitnesse/hellotest/Runner.exe
 RUN chmod o+x /start.sh
 ENTRYPOINT ["/start.sh"]

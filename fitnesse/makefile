@@ -1,5 +1,5 @@
 build:
-	@echo "[deploying to docker]"
+	@echo "[based on https://github.com/itmagix/fitnesse]"
 	sudo docker build -t "rofitnesse:latest" .
 	sudo docker run --name rofitnesse -d -p:8080:8080 rofitnesse:latest
 	sudo docker stop rofitnesse
