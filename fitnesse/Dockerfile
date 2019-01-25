@@ -8,5 +8,5 @@ RUN wget -O "/opt/fitnesse/fitnesse-standalone.jar" "http://www.fitnesse.org/fit
     chown fitnesse.fitnesse /opt/fitnesse
 ADD start.sh /start.sh
 RUN chmod o+x /start.sh
-EXPOSE 80:8181
+EXPOSE 80:8080
 ENTRYPOINT ["/start.sh"]
