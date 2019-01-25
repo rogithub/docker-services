@@ -1,0 +1,7 @@
+version: "2"
+services:
+  postgres:
+    image: "rodocker/rofitnesse"
+    container_name: rofitnesse
+    ports:
+      - "8080:8080"    
