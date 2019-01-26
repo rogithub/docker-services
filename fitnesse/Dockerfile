@@ -5,6 +5,7 @@ RUN adduser -D -u 666 fitnesse
 ENV FNREL=20190119
 RUN mkdir -p /opt/fitnesse
 RUN mkdir -p /tests
+RUN chown fitnesse.fitnesse /tests
 RUN wget -O "/opt/fitnesse/fitnesse-standalone.jar" "http://www.fitnesse.org/fitnesse-standalone.jar?responder=releaseDownload&release=$FNREL" && \
     chown fitnesse.fitnesse /opt/fitnesse
 ADD start.sh /start.sh
