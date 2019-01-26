@@ -1,7 +1,0 @@
-!define COMMAND_PATTERN {%m -r fitnesse.fitserver.FitServer,/tests/fit.dll %p}
-!define TEST_RUNNER {/tests/NetRunner.Executable.exe}
-!path /tests/Ro.Fitnesse.Library.dll
-
-!|Ro.Fitnesse.Library.HelloWorld|
-|string1|string2|Concatenate?|
-|Hello|World|Hello World|
