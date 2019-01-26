@@ -8,7 +8,7 @@ RUN wget -O "/opt/fitnesse/fitnesse-standalone.jar" "http://www.fitnesse.org/fit
     chown fitnesse.fitnesse /opt/fitnesse
 ADD start.sh /start.sh
 ADD hellotest/fit.dll /opt/fitnesse/hellotest/fit.dll
-ADD hellotest/RoFitNesseLibrary.dll /opt/fitnesse/hellotest/RoFitNesseLibrary.dll
-ADD hellotest/Runner.exe /opt/fitnesse/hellotest/Runner.exe
+ADD hellotest/Ro.Fitnesse.Library.dll /opt/fitnesse/hellotest/Ro.Fitnesse.Library.dll
+ADD hellotest/NetRunner.Executable.exe /opt/fitnesse/hellotest/NetRunner.Executable.exe
 RUN chmod o+x /start.sh
 ENTRYPOINT ["/start.sh"]
