@@ -22,4 +22,4 @@ services:
     ports:
       - "80:80"
     environment:
-      - API_URL="http://roazure.southcentralus.cloudapp.azure.com:8000"
+      - REACT_APP_API_URL="http://roazure.southcentralus.cloudapp.azure.com:8000"
