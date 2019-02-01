@@ -21,3 +21,5 @@ services:
     container_name: ccclient
     ports:
       - "80:80"
+    environment:
+      - API_URL="http://roazure.southcentralus.cloudapp.azure.com:8000"
