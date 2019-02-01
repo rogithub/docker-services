@@ -14,7 +14,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - CONN_STR="host=postgres dbname=cc user=postgres"
+      - CONN_STR=host=postgres dbname=cc user=postgres
 
   ccclient:
     image: "rodocker/ccclient:latest"
