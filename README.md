@@ -1,20 +1,23 @@
+# add user to docker group
+sudo usermod -a -G docker $USER
+
 # remove existing container
-$ sudo docker rm postgres
+$ docker rm postgres
 
 # start
-$ sudo docker-compose up -d
+$ docker-compose up -d
 
 # list
-$ sudo docker ps
+$ docker ps
 
 # stop
-$ sudo docker stop postgres
+$ docker stop postgres
 
 ## BACKUP COMMAND
-$ sudo docker exec postgres pg_dump -U postgres cc > ccbackup
+$ docker exec postgres pg_dump -U postgres cc > ccbackup
 
 ## RESTORE COMMAND
-$ cat ccbackup | sudo docker exec -i postgres psql -U postgres cc
+$ cat ccbackup | docker exec -i postgres psql -U postgres cc
 
 ## ssh conection
 $ ssh -L [PUERTO LOCAL]:localhost:[PUERTO REMOTO] [SERVIDOR REMOTO]
