@@ -14,10 +14,10 @@ $ docker ps
 $ docker stop postgres
 
 ## ssh conection
-$ ssh -L [localP]:localhost:[remoteP] [SERVIDOR REMOTO]
+$ ssh -L [localP]:localhost:[remoteP] your.server.example.com
 
 ## copy remote to local (use -r Recursively copy entire directories)
-$ scp user@server.com:/path/to/myFile /home/user/Desktop/
+$ scp user@your.server.example.com:/path/to/myFile /home/user/Desktop/
 
 ## copy local to remote
-$ scp myFile user@server.com:/path/to/destination/
+$ scp myFile user@your.server.example.com:/path/to/destination/
