@@ -20,6 +20,4 @@ services:
     image: "rodocker/ccclient:latest"
     container_name: ccclient
     ports:
-      - "80:80"
-    environment:
-      - REACT_APP_API_URL=http://roazure.southcentralus.cloudapp.azure.com:8000
+      - "80:80"    
