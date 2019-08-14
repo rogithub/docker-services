@@ -1,0 +1,9 @@
+version: "3.5"
+services:
+  mssql:
+    image: "mcr.microsoft.com/mssql/server:2017-latest"
+    container_name: mssql
+    ports:
+      - "1433:1433"
+    volumes:
+      - /home/ro/Databases/mssql:/var/opt/mssql
