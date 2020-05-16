@@ -1,0 +1,14 @@
+---
+version: "2"
+services:
+  seq:
+    image: datalust/seq:latest
+    container_name: seq
+    environment:
+      - ACCEPT_EULA=Y
+    volumes:
+      - /home/ro/Databases/seq:/data      
+    ports:
+      - 5341:5341
+      - 8081:80
+    restart: unless-stopped
