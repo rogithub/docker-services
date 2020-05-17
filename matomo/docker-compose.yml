@@ -1,0 +1,38 @@
+version: '2'
+
+services:
+  db:
+    image: mariadb
+    command: --max-allowed-packet=64MB
+    restart: always
+    volumes:
+      - /home/ro/Databases/matomo/db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=tupinchekola
+    env_file:
+      - /home/ro/Databases/matomo/db.env
+
+  app:
+    image: matomo:fpm-alpine
+    restart: always
+    links:
+      - db
+    volumes:
+#      - ./config:/var/www/html/config:rw
+#      - ./logs:/var/www/html/logs
+      - /home/ro/Databases/matomo/app:/var/www/html
+    environment:
+      - MATOMO_DATABASE_HOST=db
+    env_file:
+      - /home/ro/Databases/matomo/db.env
+
+  web:
+    image: nginx:alpine
+    restart: always
+    volumes:
+      - /home/ro/Databases/matomo/app:/var/www/html:ro
+      # see https://github.com/matomo-org/matomo-nginx
+      - /home/ro/Databases/matomo/nginx/matomo.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - 8080:80
+
