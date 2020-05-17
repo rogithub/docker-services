@@ -1,0 +1,19 @@
+version: '2'
+services:
+  mariadb:
+    image: jsurf/rpi-mariadb
+    command: --max-allowed-packet=64MB
+    restart: always
+    volumes:
+      - /home/ro/Databases/mariadb:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=tupinchekola
+      - MYSQL_USER=rojo
+      - MYSQL_PASSWORD=tupinchekola
+      - MYSQL_DATABASE=matomo
+      
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
