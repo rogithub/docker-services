@@ -1,0 +1,13 @@
+1. Make a script to automate this.
+a) local variable for path $DATABASES_CERTS_LOLCALHOST
+b) from mkcert executable folder run
+
+
+./mkcert -key-file $SITE_NAME.key -cert-file $SITE_NAME.pem localhost 127.0.0.1 ::1 && \
+openssl pkcs12 -export -out $SITE_NAME.pfx -inkey $SITE_NAME.key -in $SITE_NAME.pem -passout pass:$SITE_NAME
+
+d) if folder exists $DATABASES_CERTS_LOLCALHOST/$SITE_NAME
+   delete it
+
+e) create folder $DATABASES_CERTS_LOLCALHOST/$SITE_NAME
+   
