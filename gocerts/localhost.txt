@@ -1,0 +1,13 @@
+./mkcert -key-file https-api.key -cert-file https-api.pem localhost 127.0.0.1 ::1 && \
+openssl pkcs12 -export -out https-api.pfx -inkey https-api.key -in https-api.pem -passout pass:https-api
+
+
+./mkcert -key-file https-web.key -cert-file https-web.pem localhost 127.0.0.1 ::1 && \
+openssl pkcs12 -export -out https-web.pfx -inkey https-web.key -in https-web.pem -passout pass:https-web
+
+
+./mkcert -key-file https-identity.key -cert-file https-identity.pem localhost 127.0.0.1 ::1 && \
+openssl pkcs12 -export -out https-identity.pfx -inkey https-identity.key -in https-identity.pem -passout pass:https-identity
+
+
+
