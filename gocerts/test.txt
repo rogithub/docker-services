@@ -1,0 +1,7 @@
+
+docker volume create gocerts   
+
+docker run -it -v gocerts:/go golang:1.13.11-alpine /bin/sh  
+
+docker volume inspect gocerts
+sudo ls /var/lib/docker/volumes/gocerts/_data/mkcert

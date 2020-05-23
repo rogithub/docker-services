@@ -1,0 +1,8 @@
+version: "2"
+services:
+  gocerts:
+    image: gocerts
+    container_name: gocerts
+    build: .    
+    volumes:
+      - /home/ro/Databases/gocerts:/root/.local/share/mkcert
